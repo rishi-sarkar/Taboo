@@ -22,22 +22,12 @@ struct HomeView: View {
                     Spacer().frame(height: 50)
 
                     NavigationLink {
-                        TeamsSettingsView()
-                    } label: {
-                        ModeCard(
-                            title: "TEAMS MODE",
-                            description: "Play with 2 teams",
-                            playerCount: "(4+ PLAYERS)"
-                        )
-                    }
-
-                    NavigationLink {
                         OneVsAllSettingsView()
                     } label: {
                         ModeCard(
-                            title: "ONE VS ALL MODE",
-                            description: "Every player for themselves, scoring points as the Clue Giver",
-                            playerCount: "(2–5 PLAYERS)"
+                            title: "SOLO",
+                            description: "Every player for themselves, (You can set this up as teams)",
+                            playerCount: "(2–10 PLAYERS)"
                         )
                     }
 

@@ -8,6 +8,7 @@ struct OneVsAllSettingsView: View {
     @State private var rounds = 3
     @State private var passes = 5
     @State private var showCustomize = false
+    @State private var navigateToGame = false
 
     var body: some View {
         ZStack {
@@ -63,7 +64,7 @@ struct OneVsAllSettingsView: View {
 
                 Spacer()
                 // Start Button
-                Button { /* start game */ } label: {
+                Button { navigateToGame = true } label: {
                     Text("START")
                         .font(.system(size: 20, weight: .bold))
                         .foregroundColor(.white)
@@ -73,6 +74,15 @@ struct OneVsAllSettingsView: View {
                         .cornerRadius(16)
                         .padding(.horizontal)
                 }
+                .navigationDestination(isPresented: $navigateToGame) {
+                    IndividualGameplayView(
+                        players: players,
+                        turnTime: turnTime,
+                        rounds: rounds,
+                        passes: passes
+                    )
+                }
+
                 Spacer().frame(height: 40)
             }
             .blur(radius: showCustomize ? 5 : 0)
