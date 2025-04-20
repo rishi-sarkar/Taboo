@@ -46,6 +46,7 @@ struct OneVsAllSettingsView: View {
                         PlayerRow(name: .constant("Add Player"), icon: "person.badge.plus", isEditable: false)
                     }
                 }
+                
 
                 // Preferences Button
                 Button(action: { showCustomize = true }) {

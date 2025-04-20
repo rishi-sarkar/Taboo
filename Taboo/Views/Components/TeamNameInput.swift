@@ -1,3 +1,5 @@
+import SwiftUI
+
 struct TeamNameInput: View {
     @Binding var title: String
     let color: Color
